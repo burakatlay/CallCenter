@@ -6,7 +6,7 @@ package callcenter;
 
 /**
  *
- * @author burakatlay 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
+ * @author burakatlay
  */
 public class CallCenter {
 
