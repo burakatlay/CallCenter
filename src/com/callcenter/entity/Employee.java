@@ -13,6 +13,10 @@ public class Employee {
     String employeePassword;
     String employeeEmail;
     String employeeNickName;
+    
+    public Employee(){
+        
+    }
 
     public Employee(int employeeId, String employeeName, String employeeSurname, String employeePassword, String employeeEmail, String employeeNickName) {
         this.employeeId = employeeId;
