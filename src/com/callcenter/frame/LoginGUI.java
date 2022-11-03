@@ -26,18 +26,22 @@ public class LoginGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        LoginBtn = new javax.swing.JLabel();
+        TopBar = new javax.swing.JLabel();
+        MainBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/loginTopBar.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        LoginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/LButton1.png"))); // NOI18N
+        getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 300, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/mainBackground.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
+        TopBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/loginTopBar.png"))); // NOI18N
+        getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        MainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/mainBackground.png"))); // NOI18N
+        getContentPane().add(MainBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -79,7 +83,8 @@ public class LoginGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel LoginBtn;
+    private javax.swing.JLabel MainBackground;
+    private javax.swing.JLabel TopBar;
     // End of variables declaration//GEN-END:variables
 }
