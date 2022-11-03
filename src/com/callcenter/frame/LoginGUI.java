@@ -213,11 +213,12 @@ public class LoginGUI extends javax.swing.JFrame {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        dispose();
-//        new LoginGUI().setVisible(true);
+        
+        
         if (employee!=null) {
             Description.setText("Kayıt var");
-            
+            dispose();
+            new LoginGUI().setVisible(true);
 //            System.out.println(employee.getEmployeeId() + " " + employee.getEmployeeName()
 //            + " " + employee.getEmployeeSurname()+ " " + employee.getEmployeePhoto()
 //            + " " + employee.getEmployeePassword()+ " " + employee.getEmployeeEmail()
