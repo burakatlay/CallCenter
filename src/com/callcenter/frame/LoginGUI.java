@@ -4,6 +4,8 @@
  */
 package com.callcenter.frame;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author burakatlay
@@ -68,6 +70,11 @@ public class LoginGUI extends javax.swing.JFrame {
         getContentPane().add(userPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 123, 250, 38));
 
         LoginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/LButton1.png"))); // NOI18N
+        LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LoginBtnMouseEntered(evt);
+            }
+        });
         getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 300, 40));
 
         TopBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/loginTopBar.png"))); // NOI18N
@@ -84,6 +91,11 @@ public class LoginGUI extends javax.swing.JFrame {
         getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         MainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/mainBackground.png"))); // NOI18N
+        MainBackground.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MainBackgroundMouseExited(evt);
+            }
+        });
         getContentPane().add(MainBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         pack();
@@ -108,6 +120,16 @@ public class LoginGUI extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x - xMause, y - yMause);
     }//GEN-LAST:event_TopBarMouseDragged
+
+    private void LoginBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseEntered
+        ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton2.png"));
+        LoginBtn.setIcon(img);
+    }//GEN-LAST:event_LoginBtnMouseEntered
+
+    private void MainBackgroundMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainBackgroundMouseExited
+        ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton1.png"));
+        LoginBtn.setIcon(img);
+    }//GEN-LAST:event_MainBackgroundMouseExited
 
     /**
      * @param args the command line arguments
