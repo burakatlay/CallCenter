@@ -218,7 +218,8 @@ public class LoginGUI extends javax.swing.JFrame {
         if (employee!=null) {
             Description.setText("Kayıt var");
             dispose();
-            new LoginGUI().setVisible(true);
+            new AccessGUI().setVisible(true);
+//            new LoginGUI().setVisible(true);
 //            System.out.println(employee.getEmployeeId() + " " + employee.getEmployeeName()
 //            + " " + employee.getEmployeeSurname()+ " " + employee.getEmployeePhoto()
 //            + " " + employee.getEmployeePassword()+ " " + employee.getEmployeeEmail()
