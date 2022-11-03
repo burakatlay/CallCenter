@@ -85,6 +85,16 @@ public class LoginGUI extends javax.swing.JFrame {
         userPassword.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
         userPassword.setForeground(new java.awt.Color(37, 77, 88));
         userPassword.setBorder(null);
+        userPassword.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                userPasswordMouseMoved(evt);
+            }
+        });
+        userPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userPasswordMouseExited(evt);
+            }
+        });
         getContentPane().add(userPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 123, 250, 38));
 
         LoginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/LButton1.png"))); // NOI18N
@@ -175,6 +185,14 @@ public class LoginGUI extends javax.swing.JFrame {
         ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton1.png"));
         LoginBtn.setIcon(img);
     }//GEN-LAST:event_LoginBtnMouseExited
+
+    private void userPasswordMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPasswordMouseMoved
+        Description.setText("Enter your password");
+    }//GEN-LAST:event_userPasswordMouseMoved
+
+    private void userPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPasswordMouseExited
+        Description.setText("");
+    }//GEN-LAST:event_userPasswordMouseExited
 
     /**
      * @param args the command line arguments
