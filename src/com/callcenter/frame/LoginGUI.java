@@ -32,6 +32,7 @@ public class LoginGUI extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         MiniBtn = new javax.swing.JLabel();
         CloseBtn = new javax.swing.JLabel();
+        Description = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
         userPassword = new javax.swing.JPasswordField();
         LoginBtn = new javax.swing.JLabel();
@@ -59,9 +60,26 @@ public class LoginGUI extends javax.swing.JFrame {
         });
         getContentPane().add(CloseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 40, 40));
 
+        Description.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
+        Description.setForeground(new java.awt.Color(37, 77, 88));
+        getContentPane().add(Description, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 300, 30));
+
         userName.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
         userName.setForeground(new java.awt.Color(37, 77, 88));
         userName.setBorder(null);
+        userName.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                userNameMouseDragged(evt);
+            }
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                userNameMouseMoved(evt);
+            }
+        });
+        userName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userNameMouseExited(evt);
+            }
+        });
         getContentPane().add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 250, 38));
 
         userPassword.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
@@ -73,6 +91,9 @@ public class LoginGUI extends javax.swing.JFrame {
         LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LoginBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LoginBtnMouseExited(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 LoginBtnMouseReleased(evt);
@@ -130,14 +151,30 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBtnMouseEntered
 
     private void MainBackgroundMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainBackgroundMouseExited
-        ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton1.png"));
-        LoginBtn.setIcon(img);
+        
     }//GEN-LAST:event_MainBackgroundMouseExited
 
     private void LoginBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseReleased
         ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton2.png"));
         LoginBtn.setIcon(img);
     }//GEN-LAST:event_LoginBtnMouseReleased
+
+    private void userNameMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userNameMouseMoved
+        Description.setText("Enter your user name");
+    }//GEN-LAST:event_userNameMouseMoved
+
+    private void userNameMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userNameMouseDragged
+        
+    }//GEN-LAST:event_userNameMouseDragged
+
+    private void userNameMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userNameMouseExited
+        Description.setText("");
+    }//GEN-LAST:event_userNameMouseExited
+
+    private void LoginBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseExited
+        ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton1.png"));
+        LoginBtn.setIcon(img);
+    }//GEN-LAST:event_LoginBtnMouseExited
 
     /**
      * @param args the command line arguments
@@ -176,6 +213,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CloseBtn;
+    private javax.swing.JLabel Description;
     private javax.swing.JLabel LoginBtn;
     private javax.swing.JLabel MainBackground;
     private javax.swing.JLabel MiniBtn;
