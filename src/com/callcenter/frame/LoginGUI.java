@@ -10,6 +10,7 @@ package com.callcenter.frame;
  */
 public class LoginGUI extends javax.swing.JFrame {
 
+    int xMause, yMause;
     /**
      * Creates new form LoginGUI
      */
@@ -26,18 +27,60 @@ public class LoginGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
+        MiniBtn = new javax.swing.JLabel();
+        CloseBtn = new javax.swing.JLabel();
+        userName = new javax.swing.JTextField();
+        userPassword = new javax.swing.JPasswordField();
         LoginBtn = new javax.swing.JLabel();
         TopBar = new javax.swing.JLabel();
         MainBackground = new javax.swing.JLabel();
 
+        jTextField1.setText("jTextField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MiniBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MiniBtnMouseClicked(evt);
+            }
+        });
+        getContentPane().add(MiniBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 30, 40));
+
+        CloseBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CloseBtnMouseClicked(evt);
+            }
+        });
+        getContentPane().add(CloseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 40, 40));
+
+        userName.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
+        userName.setForeground(new java.awt.Color(37, 77, 88));
+        userName.setBorder(null);
+        getContentPane().add(userName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 250, 38));
+
+        userPassword.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
+        userPassword.setForeground(new java.awt.Color(37, 77, 88));
+        userPassword.setBorder(null);
+        getContentPane().add(userPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 123, 250, 38));
 
         LoginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/LButton1.png"))); // NOI18N
         getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 300, 40));
 
         TopBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/loginTopBar.png"))); // NOI18N
+        TopBar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                TopBarMouseDragged(evt);
+            }
+        });
+        TopBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TopBarMousePressed(evt);
+            }
+        });
         getContentPane().add(TopBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         MainBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/mainBackground.png"))); // NOI18N
@@ -46,6 +89,25 @@ public class LoginGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CloseBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloseBtnMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_CloseBtnMouseClicked
+
+    private void MiniBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MiniBtnMouseClicked
+        this.setState(LoginGUI.ICONIFIED);
+    }//GEN-LAST:event_MiniBtnMouseClicked
+
+    private void TopBarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMousePressed
+        xMause = evt.getX();
+        yMause = evt.getY();
+    }//GEN-LAST:event_TopBarMousePressed
+
+    private void TopBarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TopBarMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMause, y - yMause);
+    }//GEN-LAST:event_TopBarMouseDragged
 
     /**
      * @param args the command line arguments
@@ -83,8 +145,13 @@ public class LoginGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CloseBtn;
     private javax.swing.JLabel LoginBtn;
     private javax.swing.JLabel MainBackground;
+    private javax.swing.JLabel MiniBtn;
     private javax.swing.JLabel TopBar;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField userName;
+    private javax.swing.JPasswordField userPassword;
     // End of variables declaration//GEN-END:variables
 }
