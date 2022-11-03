@@ -4,6 +4,11 @@
  */
 package com.callcenter.frame;
 
+import com.callcenter.entity.Employee;
+import com.callcenter.library.database.DatabaseManagement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 /**
@@ -99,6 +104,9 @@ public class LoginGUI extends javax.swing.JFrame {
 
         LoginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/callcenter/image/LButton1.png"))); // NOI18N
         LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LoginBtnMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LoginBtnMouseEntered(evt);
             }
@@ -193,6 +201,32 @@ public class LoginGUI extends javax.swing.JFrame {
     private void userPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPasswordMouseExited
         Description.setText("");
     }//GEN-LAST:event_userPasswordMouseExited
+
+    private void LoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseClicked
+        String userName1 = this.userName.getText();
+        String userPassword1 = this.userPassword.getText();
+        
+        DatabaseManagement controlUser = new DatabaseManagement();
+        Employee employee = null;
+        try {
+            employee = controlUser.loginUser(userName1, userPassword1);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        dispose();
+//        new LoginGUI().setVisible(true);
+        if (employee!=null) {
+            Description.setText("Kayıt var");
+            
+//            System.out.println(employee.getEmployeeId() + " " + employee.getEmployeeName()
+//            + " " + employee.getEmployeeSurname()+ " " + employee.getEmployeePhoto()
+//            + " " + employee.getEmployeePassword()+ " " + employee.getEmployeeEmail()
+//            + " " + employee.getEmployeeNickName());
+        } else {
+            Description.setText("User Not Found!");
+        }
+
+    }//GEN-LAST:event_LoginBtnMouseClicked
 
     /**
      * @param args the command line arguments
