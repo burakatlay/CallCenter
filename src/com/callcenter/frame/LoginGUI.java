@@ -74,6 +74,9 @@ public class LoginGUI extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LoginBtnMouseEntered(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                LoginBtnMouseReleased(evt);
+            }
         });
         getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 300, 40));
 
@@ -130,6 +133,11 @@ public class LoginGUI extends javax.swing.JFrame {
         ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton1.png"));
         LoginBtn.setIcon(img);
     }//GEN-LAST:event_MainBackgroundMouseExited
+
+    private void LoginBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseReleased
+        ImageIcon img = new ImageIcon(getClass().getResource("../image/LButton2.png"));
+        LoginBtn.setIcon(img);
+    }//GEN-LAST:event_LoginBtnMouseReleased
 
     /**
      * @param args the command line arguments
