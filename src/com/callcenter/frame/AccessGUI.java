@@ -1,5 +1,6 @@
 package com.callcenter.frame;
 
+import com.callcenter.entity.Employee;
 import javax.swing.ImageIcon;
 /**
  *
@@ -12,7 +13,15 @@ public class AccessGUI extends javax.swing.JFrame {
      */
     public AccessGUI() {
         initComponents();
+        messageBox messageBoxValue = new messageBox();
+        messageBoxValue.UserNotFound();
+        System.exit(0);
+    }
+
+    AccessGUI(Employee employee) {
+        initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("../image/logo.png")).getImage());
+        jLabel1.setText(employee.getEmployeeName());
     }
 
     /**
@@ -24,10 +33,16 @@ public class AccessGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
         setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
+
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(200, 220, 42, 17);
 
         setSize(new java.awt.Dimension(500, 528));
         setLocationRelativeTo(null);
@@ -69,5 +84,6 @@ public class AccessGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
