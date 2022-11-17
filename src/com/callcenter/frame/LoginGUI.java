@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 public class LoginGUI extends javax.swing.JFrame {
 
     int xMause, yMause;
+
     /**
      * Creates new form LoginGUI
      */
