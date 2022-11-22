@@ -3,6 +3,9 @@ package com.callcenter.swing;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,6 +16,41 @@ public class PanelBorder extends javax.swing.JPanel {
     public PanelBorder() {
         initComponents();
         setOpaque(false);
+        int x = 10, y = 10;
+        
+        for (int i=0;i < 7; i++) {
+            JButton buton = new JButton("+");//enhansive button
+            buton.setBounds(x, y, 40, 30);
+            this.add(buton);
+            
+            JTextField textField = new JTextField();
+            textField.setBounds(60, y, 40, 30);
+            textField.setEditable(false);
+            textField.setText("0");
+            this.add(textField);
+            
+            buton.addActionListener((ActionEvent e) -> {
+                    int ValueField = Integer.parseInt(textField.getText());
+                    ValueField++;
+                    textField.setText(String.valueOf(ValueField));
+                });
+            
+            x = 110;
+            
+            buton = new JButton("-");//decreasing button
+            buton.setBounds(x, y, 40, 30);
+            this.add(buton);
+            
+            buton.addActionListener((ActionEvent e) -> {
+                    int ValueField = Integer.parseInt(textField.getText());
+                    ValueField--;
+                    textField.setText(String.valueOf(ValueField));
+                });
+            
+            x = 10;
+            y += 30;
+            
+        }
     }
 
 
