@@ -1,6 +1,7 @@
 package com.callcenter.frame;
 
 import com.callcenter.entity.Employee;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 /**
  *
@@ -13,6 +14,7 @@ public class AccessGUI extends javax.swing.JFrame {
      */
     public AccessGUI() {
         initComponents();
+        setBackground(new Color(0, 0, 0, 0));
 //        messageBox messageBoxValue = new messageBox();
 //        messageBoxValue.UserNotFound();
 //        System.exit(0);
@@ -21,7 +23,7 @@ public class AccessGUI extends javax.swing.JFrame {
     AccessGUI(Employee employee) {
         initComponents();
         this.setIconImage(new ImageIcon(getClass().getResource("../image/logo.png")).getImage());
-        userName.setText(employee.getEmployeeName());
+//        userName.setText(employee.getEmployeeName());
     }
 
     /**
@@ -33,17 +35,13 @@ public class AccessGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        userName = new javax.swing.JLabel();
         panelBorder1 = new com.callcenter.swing.PanelBorder();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(400, 300));
+        setUndecorated(true);
         setSize(new java.awt.Dimension(500, 500));
-        getContentPane().setLayout(null);
-
-        userName.setText("jLabel1");
-        getContentPane().add(userName);
-        userName.setBounds(0, 0, 42, 17);
 
         panelBorder1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -51,17 +49,25 @@ public class AccessGUI extends javax.swing.JFrame {
         panelBorder1.setLayout(panelBorder1Layout);
         panelBorder1Layout.setHorizontalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
         panelBorder1Layout.setVerticalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 430, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panelBorder1);
-        panelBorder1.setBounds(0, 0, 500, 500);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-        setSize(new java.awt.Dimension(500, 528));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -91,7 +97,7 @@ public class AccessGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AccessGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -102,6 +108,5 @@ public class AccessGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.callcenter.swing.PanelBorder panelBorder1;
-    private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }
